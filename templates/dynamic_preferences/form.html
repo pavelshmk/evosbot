@@ -1,0 +1,10 @@
+{% extends "dynamic_preferences/base.html" %}
+{% load i18n bootstrap4 %}
+{% block content %}
+    <h1>Section: {{ section }}</h1>
+    <form action="" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+    </form>
+{% endblock %}

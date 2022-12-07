@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+db.sqlite3
+
+/.idea
+/.env
+/logs/*
+local_texts.py
+celerybeat-schedule
+celerybeat.pid
+

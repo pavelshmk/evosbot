@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Masternode Monitor</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Masternode monitor</h1>
+    <table class="table table-hover table-striped border">
+        <thead>
+            <tr>
+                <th>Alias</th>
+                <th>Output TxID</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mn in mns %}
+                <tr>
+                <td>{{ mn.alias }}</td>
+                <td>{{ mn.output_txid }}</td>
+                <td>{{ mn.raw.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

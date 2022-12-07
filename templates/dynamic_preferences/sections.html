@@ -1,0 +1,8 @@
+<ul class="nav flex-column">
+    {% for s in registry.section_objects.values %}
+        <li class="nav-item">
+            <a href="{% if registry.section_url_namespace %}{% url registry.section_url_namespace section=s.name %}{% else %}./{{ s.name }}{% endif %}"
+            class="nav-link {% if s.name == section.name %}disabled{% endif %}">{{ s.verbose_name }}</a>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: 400px 570px;
+            margin: 10px;
+            background: white;
+        }
+        body {
+            font-family: sans-serif;
+        }
+        .top {
+            list-style: decimal;
+        }
+        li {
+            margin-bottom: 10px;
+            height: 25px;
+        }
+        li > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .avatar {
+            width: 25px;
+            height: 25px;
+            background-size: cover;
+            background-position: center;
+            margin: 0 5px 0 0;
+        }
+        .name {
+            margin-left: 5px;
+            flex-shrink: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <ol class="top">
+        {% for user in users %}
+            <li>
+                <div>
+                    <div class="avatar" style="background-image: url('{{ user.avatar }}')"></div>
+                    <div class="referrals">({{ user.confirmed_referrals }})</div>
+                    <div class="name">{{ user.name }}</div>
+                </div>
+            </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

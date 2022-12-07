@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="sidebar col-12 col-md-3">
+                {# we continue to pass the sections key in case someone subclassed the template and use these #}
+                {% include "dynamic_preferences/sections.html" with registry=registry sections=registry.sections %}
+            </div>
+            <div class="main_content col-12 col-md-9">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

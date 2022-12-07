@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: 500px 300px;
+            margin: 10px;
+            background: white;
+        }
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+<ol>
+    <li>
+        AMROI: {{ amroi | stringformat:'.2f' }}
+    </li>
+    <li>
+        Block count: {{ block_count }}<br>
+        PoS reward: {{ pos_reward | stringformat:'.8f' }}<br>
+        Masternode reward: {{ mn_reward | stringformat:'.8f' }}
+    </li>
+    <li>
+        Masternode count: {{ total_masternodes }}<br>
+        Shared masternodes: {{ shared_masternodes }}<br>
+        User masternodes: {{ user_masternodes }}
+    </li>
+    <li>
+        Pool balance: {{ pool_balance }}<br>
+        Median stake input size: {{ stack_median }}
+    </li>
+    <li>
+        Last deal price: {{ last_deal }}
+    </li>
+</ol>
+</body>
+</html>
